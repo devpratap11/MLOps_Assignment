@@ -2,7 +2,7 @@ from sklearn.model_selection import train_test_split
 import dvc.api
 import pandas as pd
 from sklearn import model_selection, datasets
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix,ConfusionMatrixDisplay
 #from sklearn.externals import joblib
 import pickle
@@ -25,7 +25,7 @@ print('Split saved')
 X_train=X_train.drop(['Class'],axis=1)
 X_test=X_test.drop(['Class'],axis=1)
 
-classifier = DecisionTreeClassifier()
+classifier = RandomForestClassifier()
 classifier.fit(X_train,Y_train)
 print('model trained')
 
